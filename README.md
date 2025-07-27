@@ -50,7 +50,7 @@ An interactive task management app featuring:
 
 ---
 
-### 3. 💾 Persistent ToDo List
+### 3. 💾 Persistent ToDo List with SQLite
 An enhanced version of the ToDo app with:
 
 - **SQLite** database integration

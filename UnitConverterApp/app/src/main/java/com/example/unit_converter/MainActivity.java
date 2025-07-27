@@ -80,9 +80,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        AdapterView.OnItemSelectedListener listener = new AdapterView.OnItemSelectedListener() {
+        AdapterView.OnItemSelectedListener inputListener = new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                preventSameUnitSelection();
                 convert();
             }
 
@@ -90,8 +91,39 @@ public class MainActivity extends AppCompatActivity {
             public void onNothingSelected(AdapterView<?> parent) {}
         };
 
-        spinnerInputUnit.setOnItemSelectedListener(listener);
-        spinnerOutputUnit.setOnItemSelectedListener(listener);
+        AdapterView.OnItemSelectedListener outputListener = new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                preventSameUnitSelection();
+                convert();
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        };
+
+        spinnerInputUnit.setOnItemSelectedListener(inputListener);
+        spinnerOutputUnit.setOnItemSelectedListener(outputListener);
+    }
+
+    private void preventSameUnitSelection() {
+        String inputUnit = spinnerInputUnit.getSelectedItem().toString();
+        String outputUnit = spinnerOutputUnit.getSelectedItem().toString();
+        
+        // If both units are the same, change output unit to next available option
+        if (inputUnit.equals(outputUnit)) {
+            String[] units = getResources().getStringArray(R.array.length_units);
+            int currentOutputPosition = spinnerOutputUnit.getSelectedItemPosition();
+            int newPosition = (currentOutputPosition + 1) % units.length;
+            
+            // Make sure new position is different from input position
+            int inputPosition = spinnerInputUnit.getSelectedItemPosition();
+            if (newPosition == inputPosition) {
+                newPosition = (newPosition + 1) % units.length;
+            }
+            
+            spinnerOutputUnit.setSelection(newPosition);
+        }
     }
 
     private void swapUnits() {
@@ -127,34 +159,39 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private double convertUnits(double value, String from, String to) {
-        double meters;
+        double metres;
         
-        // Convert to meters first
+        // Convert to metres first
         switch (from) {
-            case "Kilometers":
-                meters = value * 1000;
+            case "Metre":
+                metres = value;
                 break;
-            case "Centimeters":
-                meters = value / 100;
+            case "Millimetre":
+                metres = value / 1000;
                 break;
-            case "Millimeters":
-                meters = value / 1000;
+            case "Mile":
+                metres = value * 1609.344;
+                break;
+            case "Foot":
+                metres = value * 0.3048;
                 break;
             default:
-                meters = value;
+                metres = value;
                 break;
         }
 
-        // Convert from meters to target unit
+        // Convert from metres to target unit
         switch (to) {
-            case "Kilometers":
-                return meters / 1000;
-            case "Centimeters":
-                return meters * 100;
-            case "Millimeters":
-                return meters * 1000;
+            case "Metre":
+                return metres;
+            case "Millimetre":
+                return metres * 1000;
+            case "Mile":
+                return metres / 1609.344;
+            case "Foot":
+                return metres / 0.3048;
             default:
-                return meters;
+                return metres;
         }
     }
 }
