@@ -1,4 +1,3 @@
-// MainActivity.java
 package com.example.unit_converter;
 
 import android.os.Bundle;
