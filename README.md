@@ -1,6 +1,6 @@
-# 📱 COMP1786 Coursework CW2 – Android App Logbook
+# 📱 COMP1786 Coursework – Android App Logbook
 
-This repository contains my coursework submission for **COMP1786 – Mobile Application Design and Development (Term 2, 2024–2025)** at the University of Greenwich. The submission includes **three Android applications**, each designed and developed in Android Studio using Java, XML layouts, and Android SDK components.
+This repository contains my coursework submission for **COMP1786 – Mobile Application Design and Development** at the University of Greenwich. The submission includes **three Android applications**, each designed and developed in Android Studio using Java, XML layouts, and Android SDK components.
 
 > 🧾 Coursework contributes **20%** of the module grade and demonstrates core competencies in GUI design, event handling, resource management, and data persistence in Android development.
 
@@ -12,8 +12,6 @@ This repository contains my coursework submission for **COMP1786 – Mobile Appl
 📁 UnitConverterApp/
 📁 ToDoListApp/
 📁 ToDoListWithSQLite/
-📁 Screenshots/
-📄 CW2_Logbook.pdf
 📄 README.md
 ```
 
