@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ToDoListWithSQLite</string>
+    <string name="app_title">To-Do List</string>
+    <string name="add_task">Add Task</string>
+    <string name="add_new_task">Add New Task</string>
+    <string name="task_name">Task Name</string>
+    <string name="enter_task_name">Enter task name</string>
+    <string name="deadline">Deadline</string>
+    <string name="select_deadline">Select Date &amp; Time</string>
+    <string name="duration">Duration (days)</string>
+    <string name="enter_duration">Enter duration in days</string>
+    <string name="description">Description</string>
+    <string name="enter_description">Enter task description</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="complete">Complete</string>
+    <string name="uncomplete">Uncomplete</string>
+    <string name="current_tasks">Current Tasks</string>
+    <string name="completed_tasks">Completed Tasks</string>
+</resources>

@@ -1,4 +1,4 @@
-package com.example.todolistapp;
+package com.example.todolistwithsqlite;
 
 import android.app.AlertDialog;
 import android.content.Intent;
@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.todolistapp.databinding.ActivityAddTaskBinding;
+import com.example.todolistwithsqlite.databinding.ActivityAddTaskBinding;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;

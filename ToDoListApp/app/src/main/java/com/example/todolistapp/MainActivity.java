@@ -32,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         taskList = new ArrayList<>();
-        dateFormat = new SimpleDateFormat("HH:mm dd/MM/yy", Locale.getDefault());
+        dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
         
         addTaskLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
                 if (result.getResultCode() == RESULT_OK && result.getData() != null) {
                     String taskName = result.getData().getStringExtra("task_name");
                     long startDateMillis = result.getData().getLongExtra("task_start_date", 0);
-                    int duration = result.getData().getIntExtra("task_duration", 0);
+                    long endDateMillis = result.getData().getLongExtra("task_end_date", 0);
                     String description = result.getData().getStringExtra("task_description");
                     if (description == null) {
                         description = "";
@@ -49,15 +49,16 @@ public class MainActivity extends AppCompatActivity {
                     if (taskName != null && !taskName.isEmpty()) {
                         int editPosition = result.getData().getIntExtra("edit_position", -1);
                         Date startDate = new Date(startDateMillis);
+                        Date endDate = new Date(endDateMillis);
                         
                         if (editPosition != -1) {
                             Task task = taskList.get(editPosition);
                             task.setName(taskName);
                             task.setStartDate(startDate);
-                            task.setDuration(duration);
+                            task.setEndDate(endDate);
                             task.setDescription(description);
                         } else {
-                            Task newTask = new Task(taskName, startDate, duration, description);
+                            Task newTask = new Task(taskName, startDate, endDate, description);
                             taskList.add(newTask);
                         }
                         displayTasks();
@@ -106,7 +107,7 @@ public class MainActivity extends AppCompatActivity {
         
         Intent intent = new Intent(MainActivity.this, AddTaskActivity.class);
         intent.putExtra("task_name", task.getName());
-        intent.putExtra("task_duration", task.getDuration());
+        intent.putExtra("task_end_date", task.getEndDate().getTime());
         intent.putExtra("task_description", task.getDescription());
         intent.putExtra("task_start_date", task.getStartDate().getTime());
         intent.putExtra("edit_position", position);

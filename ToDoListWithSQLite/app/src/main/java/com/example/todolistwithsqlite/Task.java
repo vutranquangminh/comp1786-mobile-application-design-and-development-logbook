@@ -1,19 +1,22 @@
-package com.example.todolistapp;
+package com.example.todolistwithsqlite;
 
 import java.util.Calendar;
 import java.util.Date;
 
 public class Task {
+    private int id;
     private String name;
     private Date startDate;
     private Date endDate;
     private String description;
+    private boolean isCompleted;
 
     public Task(String name, Date startDate, Date endDate, String description) {
         this.name = name;
         this.startDate = startDate;
         this.endDate = endDate;
         this.description = description;
+        this.isCompleted = false;
     }
 
     public String getName() {
@@ -50,5 +53,21 @@ public class Task {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public boolean isCompleted() {
+        return isCompleted;
+    }
+
+    public void setCompleted(boolean completed) {
+        isCompleted = completed;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 } 
