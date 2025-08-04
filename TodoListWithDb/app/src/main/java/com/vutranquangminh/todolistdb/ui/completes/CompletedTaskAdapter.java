@@ -15,9 +15,15 @@ import java.util.List;
 
 public class CompletedTaskAdapter extends RecyclerView.Adapter<CompletedTaskAdapter.TaskViewHolder> {
     private final List<Task> _tasks;
+    private final OnTaskDeleteListener listener;
 
-    public CompletedTaskAdapter(List<Task> tasks) {
+    public interface OnTaskDeleteListener {
+        void onTaskDeleted(Task task);
+    }
+
+    public CompletedTaskAdapter(List<Task> tasks, OnTaskDeleteListener listener) {
         _tasks = tasks;
+        this.listener = listener;
     }
 
     @NonNull
@@ -35,6 +41,10 @@ public class CompletedTaskAdapter extends RecyclerView.Adapter<CompletedTaskAdap
         holder.taskDueDate.setText(item.DateTime != null ? item.DateTime : "No Due Date");
         holder.taskStatus.setText("Completed");
         holder.taskDescription.setText(item.Description != null ? item.Description : "No Description");
+        
+        holder.btnDelete.setOnClickListener(v -> {
+            if (listener != null) listener.onTaskDeleted(item);
+        });
     }
 
     @Override
@@ -44,6 +54,7 @@ public class CompletedTaskAdapter extends RecyclerView.Adapter<CompletedTaskAdap
 
     static class TaskViewHolder extends RecyclerView.ViewHolder {
         TextView taskName, taskDueDate, taskStatus, taskDescription;
+        View btnDelete;
 
         public TaskViewHolder(View itemView) {
             super(itemView);
@@ -51,6 +62,7 @@ public class CompletedTaskAdapter extends RecyclerView.Adapter<CompletedTaskAdap
             taskDueDate = itemView.findViewById(R.id.textDateStart);
             taskStatus = itemView.findViewById(R.id.txtDisplayStatus);
             taskDescription = itemView.findViewById(R.id.textTaskCompeletedDescription);
+            btnDelete = itemView.findViewById(R.id.btnDeleteTask);
         }
     }
 }
