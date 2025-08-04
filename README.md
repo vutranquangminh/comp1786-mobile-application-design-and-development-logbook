@@ -21,11 +21,11 @@ This repository contains my coursework submission for **COMP1786 – Mobile Appl
 
 Each app corresponds to one exercise, accompanied by evidence and reflection in `CW2_Logbook.pdf`.
 
-| Exercise | App Name             | Description                                 | Weight |
-|----------|----------------------|---------------------------------------------|--------|
-| 1        | UnitConverter        | Convert between metre, millimetre, mile, ft | 30%    |
-| 2        | TodoListWithOutDb    | Task list app with add/edit/delete features | 30%    |
-| 3        | TodoListWithDb       | Persistent ToDo app with completed status   | 40%    |
+| Exercise | App Name             | Description                                 |
+|----------|----------------------|---------------------------------------------|
+| 1        | UnitConverter        | Convert between metre, millimetre, mile, ft |
+| 2        | TodoListWithOutDb    | Task list app with add/edit/delete features |
+| 3        | TodoListWithDb       | Persistent ToDo app with completed status   |
 
 ---
 
@@ -126,9 +126,9 @@ An enhanced version of the ToDo app with:
 ## 👨‍💻 Developer Information
 
 **Developer:** Vu Tran Quang Minh  
-**Student ID:** [To be added]  
+**Student ID:** GCS220006  
 **Course:** COMP1786 - Mobile Application Design and Development  
 **University:** University of Greenwich  
-**Academic Year:** [To be added]
+**Academic Year:** 2025
 
 ---
