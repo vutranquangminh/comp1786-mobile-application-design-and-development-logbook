@@ -128,13 +128,3 @@ An enhanced version of the ToDo app with:
 4. For the SQLite version, test by adding tasks and toggling status.
 
 ---
-
-## 👨‍💻 Developer Information
-
-**Developer:** Vu Tran Quang Minh  
-**Student ID:** GCS220006  
-**Course:** COMP1786 - Mobile Application Design and Development  
-**University:** University of Greenwich  
-**Academic Year:** 2025
-
----
