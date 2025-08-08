@@ -1,8 +1,14 @@
 # 📱 COMP1786 Coursework – Android App Logbook
 
-This repository contains my coursework submission for **COMP1786 – Mobile Application Design and Development** at the University of Greenwich. The submission includes **three Android applications**, each designed and developed in Android Studio using Java, XML layouts, and Android SDK components.
+## 👨‍💻 Author Information
 
-> 🧾 Coursework contributes **20%** of the module grade and demonstrates core competencies in GUI design, event handling, resource management, and data persistence in Android development.
+**Author:** Vũ Trần Quang Minh  
+**Greenwich UK Student ID:** 001325733  
+**FPT Greenwich Student ID:** GCS220006  
+**Class:** COS1103  
+**Subject:** COMP1786 - Mobile Application Design and Development  
+**Contact:** minhvtqgcs220006@fpt.edu.vn  
+**GitHub:** [vutranquangminh](https://github.com/vutranquangminh)
 
 ---
 
